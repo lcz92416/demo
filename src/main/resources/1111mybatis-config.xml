@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--全局设置-->
+    <settings>
+        <!--在映射database column名字和entity属性名时，自动将带下划线column名转化为常见的java驼峰形式属性名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--延迟加载entity的关联属性-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+
+    <!--定义java类型的别名，这样在别处配置文件中使用 它们时，就不必再指明带package全名。-->
+    <typeAliases>
+        <typeAlias alias="User" type="cn.com.betasoft.saas.demo.model.UserModel"/>
+    </typeAliases>
+
+    <!--
+    transactionManager: 有两种类型
+    1, JDBC : 使用从数据源返回的连接管理commit和rollback
+    2, MANAGED : 依靠容器来管理transaction
+    dataSource: 有3种类型
+    1, UNPOOLED :每次请求新打开连接，用完后关闭连接
+    2, POOLED : 使用连接池管理连接
+    3, JNDI ：使用容器管理datasource时使用
+    -->
+    <environments default="local">
+        <environment id="local">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <mapper resource="cn.com.betasoft.saas.demo.mappers.UserMapper.xml" />
+    </mappers>
+</configuration>
