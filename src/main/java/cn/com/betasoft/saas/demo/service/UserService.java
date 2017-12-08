@@ -8,4 +8,10 @@ public interface UserService {
     public List<UserModel> selectAllUser();
 
     public UserModel selectUserById(String id);
+
+    public void insertUser(UserModel user);
+
+    public void deleteUserById(String id);
+
+    public void updateUser(UserModel user);
 }

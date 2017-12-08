@@ -1,4 +1,4 @@
-package cn.com.betasoft.saas.demo.dao;
+package cn.com.betasoft.saas.demo.mapper.pgsql;
 
 import cn.com.betasoft.saas.demo.model.UserModel;
 import org.apache.ibatis.annotations.Delete;
@@ -8,9 +8,9 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
-public interface UserDao {
-//    @Select("select * from users")
-    public List<UserModel> selectAllUser();
+public interface UserByPgSqlMapper {
+    @Select("select * from saas_order_user_in_vms")
+    public List<Object> selectAllUser();
 
 //    @Select("select * from users where id=#{id}")
     public UserModel selectUserById(String id);

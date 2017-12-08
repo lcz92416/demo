@@ -26,6 +26,9 @@
                     <th>
                         手机号
                     </th>
+                    <th>
+                        操作
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -41,6 +44,7 @@
                     <td>
                     ${models.mobilephone}
                     </td>
+                    <td><button class="btn" type="button" contenteditable="true" onclick="update('${models.id}')">更新</button></td>
                 </tr>
                 </#list>
                 </tbody>
@@ -48,5 +52,17 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function update(userId) {
+        $.ajax({
+            url:"/user/update",
+            type:"GET",
+            data:{userId:userId},
+            success:function (data) {
+
+            }
+        });
+    }
+</script>
 </body>
 </html>
