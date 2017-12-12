@@ -3,7 +3,7 @@ package cn.com.betasoft.saas.demo.model;
 
 public class SysRoleModel {
     private Long id;
-    private String name;
+    private String roleName;
 
 
     public Long getId() {
@@ -14,11 +14,11 @@ public class SysRoleModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

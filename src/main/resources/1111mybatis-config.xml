@@ -38,6 +38,6 @@
 
 
     <mappers>
-        <mapper resource="cn.com.betasoft.saas.demo.mappers.UserMapper.xml" />
+        <mapper resource="cn.com.betasoft.saas.demo.mapper.UserMapper.xml" />
     </mappers>
 </configuration>

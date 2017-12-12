@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 //@SpringBootApplication
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan("cn.com.betasoft.saas.demo.mapper.*")
+//@MapperScan("cn.com.betasoft.saas.demo.mapper.*")
 public class DemoApplication {
 
 	public static void main(String[] args) {
